@@ -1,3 +1,5 @@
+#description Displays the bot's uptime in an embed
+
 import discord, datetime, time
 from discord.ext import commands
 from bot import start_time, slash
