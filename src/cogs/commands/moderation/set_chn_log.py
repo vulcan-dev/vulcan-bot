@@ -1,4 +1,4 @@
-#description Sets log channel - Takes Channel ID
+#description Sets log channel - Takes Channel
 
 import discord
 from discord import errors
@@ -15,7 +15,7 @@ options = [
     }
 ]
 
-class set_chn_welcome(commands.Cog):
+class set_chn_log(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -23,17 +23,16 @@ class set_chn_welcome(commands.Cog):
     #@commands.has_permissions(kick_members=True)
     #@commands.command(pass_context=True)
     @commands.has_permissions(kick_members=True)
-    @cog_ext.cog_slash(name='set_chn_welcome', description='Set the welcome channel', guild_ids=[757508676784488559], options=options)
-    async def set_chn_welcome(self, ctx: SlashContext, chn):
+    @cog_ext.cog_slash(name='set_chn_log', description='Set channel for logging', guild_ids=[757508676784488559], options=options)
+    async def set_chn_log(self, ctx: SlashContext, chn):
         try:
             channel = await self.bot.fetch_channel(int(chn.id))
-            utils.modify_settings('chn_welcome', chn.id)
+            utils.modify_settings('chn_log', chn.id)
             await ctx.respond()
         except errors.NotFound:
-            await ctx.respond()
             await ctx.channel.send('Channel not found')
 
         #await ctx.message.delete()
 
 def setup(bot):
-    bot.add_cog(set_chn_welcome(bot))
+    bot.add_cog(set_chn_log(bot))
