@@ -4,10 +4,9 @@
 ## Features
 
 - Logging
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+- Setting channels
+- Slash Commands
+- TODO: Moderator commands (mute, kick, ban)
 
 ## Tech
 
