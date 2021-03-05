@@ -1,4 +1,4 @@
-#description Outputs this
+#description Outputs all commands in an embed
 
 import discord
 from utils import utils
@@ -25,8 +25,11 @@ class help(commands.Cog):
         prefix = utils.load_settings()['prefix']
         for file in listdir('./cogs/commands/'):
             if file.endswith('.py'):
-                desc = open(f'./cogs/commands/{file}', 'r+').readline().replace('#description', '')
-                embed.add_field(name=f'{prefix}{file[:-2]}', value=desc)
+                #desc = open(f'./cogs/commands/{file}', 'r+').readline().replace('#description', '')
+                desc = open(f'./cogs/commands/{file}', 'r+').readline()
+                if (desc.split()[0] == '#description'):
+                    embed.add_field(name=f'{prefix}{file[:-2]}', value=desc.replace('#description', ''))
+                else: embed.add_field(name=f'{prefix}{file[:-2]}', value='N/A')
 
         await ctx.respond()
         await ctx.send(embed=embed)
