@@ -31,6 +31,7 @@ extensions = [
     'cogs.events.on_message',
     'cogs.events.on_message_edit',
     'cogs.events.on_message_delete',
+    'cogs.events.on_voice_state_update',
     'cogs.events.reaction_roles',
 ]
 
