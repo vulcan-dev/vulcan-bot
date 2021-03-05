@@ -24,7 +24,7 @@ class reaction_roles(commands.Cog):
             print('Ticket System: Channel not Found!')
         else:
             if reactionpayload.message_id == channel.last_message_id:
-                if not self.bot.get_user(reactionpayload.user_id):
+                if self.bot.get_user(reactionpayload.user_id):
                     guild = self.bot.get_guild(reactionpayload.guild_id)
                     member = await guild.fetch_member(reactionpayload.user_id)
                     overwrites = {
@@ -35,8 +35,7 @@ class reaction_roles(commands.Cog):
                     role = discord.utils.get(guild.roles, name="Member", id=758349936584032287)
                     await member.add_roles(role)
             else:
-                print(reactionpayload.message_id)
-                print(channel.last_message_id)
+                pass
     
 def setup(bot):
     bot.add_cog(reaction_roles(bot))
