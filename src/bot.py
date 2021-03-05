@@ -51,8 +51,6 @@ async def on_ready():
 
     await message.add_reaction('✅')
 
-#https://discord.com/oauth2/authorize?client_id=795454131573620766&scope=identify%20applications.commands&response_type=code&redirect_uri=http%3A%2F%2F192.168.0.43%3A50451%2Fapi%2Fdiscord%2Fcallback
-
 try:
     for ext in extensions:
         bot.load_extension(ext)
