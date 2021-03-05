@@ -29,10 +29,7 @@ class set_chn_log(commands.Cog):
             channel = await self.bot.fetch_channel(int(chn.id))
             utils.modify_settings('chn_log', chn.id)
             await ctx.respond()
-            #await ctx.respond()
-            #wait ctx.channel.send(f'Successfully set log channel to: {ctx.channel.mention}')
         except errors.NotFound:
-            await ctx.respond()
             await ctx.channel.send('Channel not found')
 
         #await ctx.message.delete()

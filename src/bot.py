@@ -22,6 +22,7 @@ extensions = [
     'cogs.commands.uptime',
     'cogs.commands.set_chn_log',
     'cogs.commands.set_chn_welcome',
+    'cogs.commands.set_chn_rules',
     'cogs.events.on_message',
     'cogs.events.on_message_edit',
     'cogs.events.on_message_delete',
@@ -44,7 +45,7 @@ async def on_ready():
         embed.set_footer(text=utils.get_time())
 
         message = await channel.send(embed=embed)
-        utils.modify_settings('rules_id', f'{message.id}')
+        utils.modify_settings('rules_id', message.id)
     except errors.HTTPException as e:
         utils.logger.error(f'HTTPException: {str(e)}')
 
