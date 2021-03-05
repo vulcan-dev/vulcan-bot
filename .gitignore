@@ -4,4 +4,5 @@ src/__pycache__/
 src/cogs/__pycache__/
 src/cogs/commands/__pycache__/
 src/cogs/events/__pycache__/
+src/utils/__pycache__/
 settings.json
