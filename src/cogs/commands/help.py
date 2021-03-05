@@ -21,7 +21,7 @@ class help(commands.Cog):
     @cog_ext.cog_slash(name='Help', description='Lists useful commands', guild_ids=[757508676784488559], options=None)
     async def help(self, ctx: SlashContext):
         embed=discord.Embed(title='Commands', color=0x01dae9)
-        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+        embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar_url)
         prefix = utils.load_settings()['prefix']
         for file in listdir('./cogs/commands/'):
             if file.endswith('.py'):
