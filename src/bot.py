@@ -17,12 +17,17 @@ slash = SlashCommand(bot, sync_commands=True)
 start_time = time.time()
 
 extensions = [
-    'cogs.commands.help',
-    'cogs.commands.bdel',
-    'cogs.commands.uptime',
-    'cogs.commands.set_chn_log',
-    'cogs.commands.set_chn_welcome',
-    'cogs.commands.set_chn_rules',
+    # Moderation
+    'cogs.commands.moderation.bdel',
+    'cogs.commands.moderation.set_chn_log',
+    'cogs.commands.moderation.set_chn_welcome',
+    'cogs.commands.moderation.set_chn_rules',
+
+    # Utils
+    'cogs.commands.utils.help',
+    'cogs.commands.utils.uptime',
+
+    # Events
     'cogs.events.on_message',
     'cogs.events.on_message_edit',
     'cogs.events.on_message_delete',
