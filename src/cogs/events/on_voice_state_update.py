@@ -43,7 +43,6 @@ class on_voice_state_update(commands.Cog):
                     await self.bot.wait_for('voice_state_update', check=check)
                     await new_channel.delete()
                     print('channel deleted')
-                    channels.remove(f'{new_channel}')
                     await new_category.delete()
                     print('category deleted')
         except Exception as e:
