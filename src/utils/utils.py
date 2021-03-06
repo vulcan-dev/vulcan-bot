@@ -33,7 +33,7 @@ def modify_settings(key, val):
     settings_f.close()
 
 def load_settings():
-    with open('../settings.json', 'r+') as settings_f:
+    with open('../../settings.json', 'r+') as settings_f:
         settings = json.load(settings_f)
 
     settings_f.close()
