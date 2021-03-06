@@ -6,17 +6,17 @@ logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
 
 c_handler = logging.StreamHandler()
-f_handler = logging.FileHandler('../logs/discord.log')
+#f_handler = logging.FileHandler('../../logs/discord.log')
 c_handler.setLevel(logging.INFO)
-f_handler.setLevel(logging.ERROR)
+#f_handler.setLevel(logging.ERROR)
 
 c_format = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
-f_format = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
+#f_format = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
 c_handler.setFormatter(c_format)
-f_handler.setFormatter(f_format)
+#f_handler.setFormatter(f_format)
 
 logger.addHandler(c_handler)
-logger.addHandler(f_handler)
+#logger.addHandler(f_handler)
 
 def get_time():
     return datetime.now().strftime("%Y-%m-%D %H:%M:%S")
