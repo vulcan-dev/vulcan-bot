@@ -18,14 +18,20 @@ start_time = time.time()
 
 extensions = [
     # Moderation
-    'cogs.commands.moderation.bdel',
-    'cogs.commands.moderation.set_chn_log',
-    'cogs.commands.moderation.set_chn_welcome',
-    'cogs.commands.moderation.set_chn_rules',
+    'cogs.commands.moderation.ban',
+    'cogs.commands.moderation.kick',
+    'cogs.commands.moderation.unban',
+    'cogs.commands.moderation.warn',
 
     # Utils
+    'cogs.commands.utils.bdel',
+    'cogs.commands.utils.set_chn_log',
+    'cogs.commands.utils.set_chn_welcome',
+    'cogs.commands.utils.set_chn_rules',
     'cogs.commands.utils.help',
     'cogs.commands.utils.uptime',
+    'cogs.commands.utils.user_info',
+    'cogs.commands.utils.server_info',
 
     # Events
     'cogs.events.on_message',
@@ -45,7 +51,7 @@ async def on_ready():
 
         embed = discord.Embed(title='', description='', color=0xbb00ff)
         embed.set_author(name='Rules', icon_url=bot.user.avatar_url)
-        embed.add_field(name='**Rule 1)**', value='Be respectful to all Members, treat them as your friend.', inline=False)
+        embed.add_field(name='**Rule 1)**', value='Be disrespectful to all Members, treat them like a cunt.', inline=False)
         embed.add_field(name='**Rule 2)**', value=f'Obviously no memes in {bot.get_channel(757508676784488561).mention}', inline=False)
         embed.add_field(name='**Rule 3)**', value='Be a cunt', inline=False)
         embed.set_footer(text=utils.get_time())
