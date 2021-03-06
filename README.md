@@ -13,6 +13,7 @@
 - TODO: Add guilds to settings.json (or just create a db)
 - TODO: Create a datebase for moderation commands (mute, kick, ban, unban, etc...)
 - TODO: Add a get_guild command in utils.py
+- TODO: Add a requirements.txt so installing all libraries is easier
 
 ## Tech
 
