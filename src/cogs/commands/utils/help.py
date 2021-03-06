@@ -17,7 +17,7 @@ class help(commands.Cog):
         embed=discord.Embed(title='Commands', color=0x01dae9)
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar_url)
         prefix = utils.load_settings()['prefix']
-        for path, subdirs, files in os.walk('./cogs/commands/'):
+        for path, subdirs, files in os.walk('./src/cogs/commands/'):
             for file in sorted(files):
                 if file.endswith('.py'):
                     desc = open(f'{path}/{file}', 'r+').readline()
