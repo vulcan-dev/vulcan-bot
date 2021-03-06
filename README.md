@@ -30,7 +30,6 @@ Vulcan Bot uses a number of open libraries to work properly:
 
 ```sh
 git clone https://github.com/vulcan-dev/vulcan-bot.git
-pip3 install discord.py
-pip3 install discord-py-slash-commands
-pip3 install logging
+pip3 install -r requirements.txt
+python3 bot.py
 ```
