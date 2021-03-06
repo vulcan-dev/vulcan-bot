@@ -15,6 +15,9 @@
 - TODO: Add a get_guild command in utils.py
 - TODO: Add a requirements.txt so installing all libraries is easier
 
+## Information
+- The source for user_info.py and server_info.py were copied from https://github.com/Carberra/updated-discord.py-tutorial (I'm tired and sometimes it's ok to copy a bit of code)
+
 ## Tech
 
 Vulcan Bot uses a number of open libraries to work properly:
