@@ -1,7 +1,7 @@
 from enum import auto
 import logging
 import discord
-
+#test command
 from discord_slash.context import SlashContext
 from utils import utils
 from discord import errors
