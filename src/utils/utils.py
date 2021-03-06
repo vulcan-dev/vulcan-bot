@@ -6,7 +6,7 @@ logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
 
 c_handler = logging.StreamHandler()
-f_handler = logging.FileHandler('../log/discord.log')
+f_handler = logging.FileHandler('../logs/discord.log')
 c_handler.setLevel(logging.INFO)
 f_handler.setLevel(logging.ERROR)
 
