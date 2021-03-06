@@ -18,12 +18,12 @@ class help(commands.Cog):
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar_url)
         prefix = utils.load_settings()['prefix']
         for path, subdirs, files in os.walk('./cogs/commands/'):
-            for file in files:
+            for file in sorted(files):
                 if file.endswith('.py'):
                     desc = open(f'{path}/{file}', 'r+').readline()
-                    if (desc.split()[0] == '#description'):
-                        embed.add_field(name=f'{prefix}{file[:-2]}', value=desc.replace('#description', ''))
-                    else: embed.add_field(name=f'{prefix}{file[:-2]}', value='N/A')
+                    if (desc and desc.split()[0] == '#description'):
+                        embed.add_field(name=f'{prefix}{file[:-3]}', value=desc.replace('#description', ''))
+                    else: embed.add_field(name=f'{prefix}{file[:-3]}', value='N/A')
 
         await ctx.respond()
         await ctx.send(embed=embed)
