@@ -1,7 +1,6 @@
 from enum import auto
 import logging
 import discord
-#test command
 from discord_slash.context import SlashContext
 from utils import utils
 from discord import errors
@@ -60,6 +59,7 @@ async def on_ready():
         utils.modify_settings('rules_id', message.id)
     except errors.HTTPException as e:
         utils.logger.error(f'HTTPException: {str(e)}')
+        print('a')
 
     await message.add_reaction('✅')
 
