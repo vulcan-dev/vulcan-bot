@@ -6,3 +6,4 @@ src/cogs/commands/__pycache__/
 src/cogs/events/__pycache__/
 src/utils/__pycache__/
 db.json
+push.sh
