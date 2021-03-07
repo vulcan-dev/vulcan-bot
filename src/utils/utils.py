@@ -1,7 +1,7 @@
 from datetime import datetime
 import json
 import logging
-import MySQLdb
+import pymysql
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -24,7 +24,7 @@ def get_time():
 
 # Read the guild/server name or id and then get the k, v's from the array in the settings.json file
 def modify_settings(key, val):
-    with open('./settings.json', 'r+') as settings_f:
+    with open('../settings.json', 'r+') as settings_f:
         settings = json.load(settings_f)
         settings[key] = val
         settings_f.seek(0)
@@ -34,22 +34,24 @@ def modify_settings(key, val):
     settings_f.close()
 
 def load_settings():
-    with open('./settings.json', 'r+') as settings_f:
+    with open('../settings.json', 'r+') as settings_f:
         settings = json.load(settings_f)
 
     settings_f.close()
     return settings
 
 def get_token():
-    with open('./db.json', 'r') as db_settings_f:
+    with open('../db.json', 'r') as db_settings_f:
         creds = json.load(db_settings_f)
 
     db_settings_f.close()
     
     try:
-        conn = MySQLdb.connect(creds['host'], creds['dbuser'], creds['pass'], creds['dbname'])
-    except MySQLdb.Error as e:
-        logging.error(f'MySQLdb encountered an error connecting: {e}')
+        conn = pymysql.connect(host=creds['host'], user=creds['dbuser'], password=creds['pass'], db=creds['dbname'])
+        pass
+    except pymysql.Error as e:
+        pass
+        logging.error(f'pymysql encountered an error connecting: {e}')
 
     logging.info('Successfully connected to database')
     print('Successfully connected to database')
