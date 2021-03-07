@@ -24,6 +24,7 @@ extensions = [
 
     # Utils
     'cogs.commands.utils.bdel',
+    'cogs.commands.utils.git',
     'cogs.commands.utils.set_chn_log',
     'cogs.commands.utils.set_chn_welcome',
     'cogs.commands.utils.set_chn_rules',
