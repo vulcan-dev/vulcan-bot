@@ -2,6 +2,7 @@ from datetime import datetime
 import json
 import logging
 import pymysql
+from os import chdir, getcwd
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -18,6 +19,8 @@ c_handler.setFormatter(c_format)
 
 logger.addHandler(c_handler)
 #logger.addHandler(f_handler)
+
+chdir('../')
 
 def get_time():
     return datetime.now().strftime("%Y-%m-%D %H:%M:%S")
