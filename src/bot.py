@@ -59,7 +59,6 @@ async def on_ready():
         utils.modify_settings('rules_id', message.id)
     except errors.HTTPException as e:
         utils.logger.error(f'HTTPException: {str(e)}')
-        print('a')
 
     await message.add_reaction('✅')
 
@@ -69,6 +68,7 @@ try:
         utils.logger.info(f'Loaded extension: {ext}')
 
     utils.logger.info(f'Finished loading extenions')
-    bot.run(utils.load_settings()['token'])
+    bot.run(utils.get_token())
 except Exception as e:
+    print(f'ERROR: {e}')
     utils.logger.warning(e)

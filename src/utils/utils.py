@@ -24,7 +24,7 @@ def get_time():
 
 # Read the guild/server name or id and then get the k, v's from the array in the settings.json file
 def modify_settings(key, val):
-    with open('../settings.json', 'r+') as settings_f:
+    with open('./settings.json', 'r+') as settings_f:
         settings = json.load(settings_f)
         settings[key] = val
         settings_f.seek(0)
@@ -34,29 +34,29 @@ def modify_settings(key, val):
     settings_f.close()
 
 def load_settings():
-    with open('../settings.json', 'r+') as settings_f:
+    with open('./settings.json', 'r+') as settings_f:
         settings = json.load(settings_f)
 
     settings_f.close()
     return settings
 
 def get_token():
-    with open('../db.json', 'r') as db:
-        data = json.load(db)
+    with open('./db.json', 'r') as db_settings_f:
+        creds = json.load(db_settings_f)
 
-    db.close()
+    db_settings_f.close()
     
-    # try:
-    #     # hostname dbusername password dbname
-    #     conn = MySQLdb.connect(data['host'], data['dbuser'], data['pass'], data['dbname'])
-    # except MySQLdb.Error as e:
-    #     print(f'MySQLdb encountered an error connecting: {e}')
+    try:
+        conn = MySQLdb.connect(creds['host'], creds['dbuser'], creds['pass'], creds['dbname'])
+    except MySQLdb.Error as e:
+        logging.error(f'MySQLdb encountered an error connecting: {e}')
 
+    logging.info('Successfully connected to database')
     print('Successfully connected to database')
 
-    # cursor = conn.cursor()
-    # cursor.execute('SELECT `token` FROM `server_0`')
-    # token = cursor.fetchone()
+    cursor = conn.cursor()
+    cursor.execute('SELECT `token` FROM `server_0`')
+    token = cursor.fetchone()[0]
     
-    #conn.close()
+    conn.close()
     return token
