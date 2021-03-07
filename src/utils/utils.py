@@ -20,8 +20,6 @@ c_handler.setFormatter(c_format)
 logger.addHandler(c_handler)
 #logger.addHandler(f_handler)
 
-chdir('../')
-
 def get_time():
     return datetime.now().strftime("%Y-%m-%D %H:%M:%S")
 
