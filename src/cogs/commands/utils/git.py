@@ -20,7 +20,7 @@ class git(commands.Cog):
 
         embed = Embed(title='Git', color=0x01dae9)
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar_url)
-        embed.add_field(name='Git URL', value=repo.git_url, inline=False)
+        embed.add_field(name='Git URL', value='https://github.com/vulcan-dev/vulcan-bot', inline=False)
         embed.add_field(name='Created At', value=repo.created_at, inline=False)
         embed.add_field(name='Last Update', value=repo.updated_at, inline=True)
         embed.add_field(name='Stars', value=repo.stargazers_count, inline=True)
