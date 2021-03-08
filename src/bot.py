@@ -46,18 +46,6 @@ async def on_ready():
     utils.logger.info(f'Logged in as {bot.user.name}')
     try:
         await bot.change_presence(activity=discord.Game(name="Daniel W is a shit owner"))
-
-        #channel = await bot.fetch_channel(int(utils.load_settings()['chn_rules']))
-        #await channel.purge(limit=2)
-
-        # embed = discord.Embed(title='', description='', color=0xbb00ff)
-        # embed.set_author(name='Rules', icon_url=bot.user.avatar_url)
-        # embed.add_field(name='**Rule 1)**', value='No racism', inline=False)
-        # embed.add_field(name='**Rule 3)**', value='Be a cunt', inline=False)
-        # embed.set_footer(text=utils.get_time())
-
-        # message = await channel.send(embed=embed)
-        #utils.modify_settings('rules_id', message.id)
     except errors.HTTPException as e:
         utils.logger.error(f'HTTPException: {str(e)}')
 
