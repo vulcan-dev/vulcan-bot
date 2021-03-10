@@ -7,6 +7,7 @@
 - Setting channels
 - Slash Commands
 - TODO: Role bot
+- TODO: Add static typing
 - TODO: Moderator commands (mute, kick, ban)
 - TODO: Cleanup imports
 - TODO: Cleanup code
